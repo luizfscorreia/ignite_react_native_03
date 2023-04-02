@@ -1,5 +1,6 @@
 import { MotiView } from 'moti';
-import { RectButton } from 'react-native-gesture-handler';
+import React, { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import styled from 'styled-components/native';
 
@@ -37,7 +38,11 @@ export const UserInfoText = styled.Text`
   font-family: ${props => props.theme.fonts.regular};
 `;
 
-export const SignOutButton = styled(RectButton)`
+type Props = {
+  children: ReactNode
+}
+
+export const SignOutButton = styled(RectButton)<Props>`
   justify-content: center;
 
   align-items: center;
